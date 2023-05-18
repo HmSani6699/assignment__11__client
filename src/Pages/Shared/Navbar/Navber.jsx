@@ -2,10 +2,8 @@
 const Navber = () => {
 
     const navLink = <>
-
         <li><a>Home</a></li>
         <li><a>All Toy</a></li>
-
     </>
 
     return (
