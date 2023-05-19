@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
 
-    const { signIn ,googleLogin,githubLogin} = useContext(AuthContext);
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -14,24 +14,24 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-       signIn(email,password)
-       .then(result=>{
-        const user = result.user;
-        console.log(user);
-       })
-       .catch(error=>console.log(error))
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error))
     }
 
 
     // Google log in 
-    const handleGoogleLogin = ()=>{
+    const handleGoogleLogin = () => {
         googleLogin()
     }
 
-     // Github log in
-     const handleGihubLogin=()=>{
+    // Github log in
+    const handleGihubLogin = () => {
         githubLogin()
-     }
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200 mt-14 mb-14">
@@ -59,7 +59,12 @@ const Login = () => {
                                 <input type="submit" className="btn bg-orange-700" value="Log in" />
                             </div>
                         </form>
-                        <p className="text-center mt-3 mb-3">Or Sign Up with</p>
+                        <div className="flex items-center justify-center mt-3">
+                            <p className="border border-t-4"></p>
+                            <p className="border rounded-xl p-2 text-center mt-3 mb-3">Or Sign Up with</p>
+                            <p className="border border-t-4"></p>
+                        </div>
+
                         <div className="flex items-center justify-center gap-4">
                             <button onClick={handleGoogleLogin}><img className="h-6 w-6" src={iconGoogle} alt="" /></button>
                             <button onClick={handleGihubLogin}><FaGithub className="text-2xl"></FaGithub></button>
