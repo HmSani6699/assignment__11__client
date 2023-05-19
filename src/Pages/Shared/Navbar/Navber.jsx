@@ -40,7 +40,7 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user && <div className="avatar mr-4 rounded-full ring ring-[#c2410c] ring-offset-base-100 ring-offset-2 ">
+                {user && <div className="avatar online mr-4 rounded-full ring ring-[#c2410c] ring-offset-base-100 ring-offset-2 ">
                     <div className="w-12">
                         <img title={user.displayName} className=" rounded-full" src={user.photoURL} />
                     </div>
