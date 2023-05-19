@@ -13,7 +13,7 @@ const Navber = () => {
     }
 
     const navLink = <>
-        <li><a>Home</a></li>
+        <li><Link to='/'>Home</Link></li>
         <li><a>All Toy</a></li>
         {
             user ? <li><button onClick={handleLogOut}>Log Out</button></li> :
