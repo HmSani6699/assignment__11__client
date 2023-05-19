@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
 
-    const { signIn ,googleLogin} = useContext(AuthContext);
+    const { signIn ,googleLogin,githubLogin} = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -24,10 +24,14 @@ const Login = () => {
 
 
     // Google log in 
-
     const handleGoogleLogin = ()=>{
         googleLogin()
     }
+
+     // Github log in
+     const handleGihubLogin=()=>{
+        githubLogin()
+     }
 
     return (
         <div className="hero min-h-screen bg-base-200 mt-14 mb-14">
@@ -58,7 +62,7 @@ const Login = () => {
                         <p className="text-center mt-3 mb-3">Or Sign Up with</p>
                         <div className="flex items-center justify-center gap-4">
                             <button onClick={handleGoogleLogin}><img className="h-6 w-6" src={iconGoogle} alt="" /></button>
-                            <button><FaGithub className="text-2xl"></FaGithub></button>
+                            <button onClick={handleGihubLogin}><FaGithub className="text-2xl"></FaGithub></button>
                         </div>
                         <p className="mt-3 text-center">Have an account? <Link className="text-orange-700 font-bold" to='/register'>Register</Link></p>
                     </div>
