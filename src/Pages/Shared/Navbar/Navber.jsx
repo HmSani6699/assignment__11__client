@@ -27,7 +27,7 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+            <input type="submit" className="btn bg-orange-700" value="Get stard" />
             </div>
         </div>
     );
