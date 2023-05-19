@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn ,googleLogin} = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -20,6 +20,13 @@ const Login = () => {
         console.log(user);
        })
        .catch(error=>console.log(error))
+    }
+
+
+    // Google log in 
+
+    const handleGoogleLogin = ()=>{
+        googleLogin()
     }
 
     return (
@@ -50,7 +57,7 @@ const Login = () => {
                         </form>
                         <p className="text-center mt-3 mb-3">Or Sign Up with</p>
                         <div className="flex items-center justify-center gap-4">
-                            <button><img className="h-6 w-6" src={iconGoogle} alt="" /></button>
+                            <button onClick={handleGoogleLogin}><img className="h-6 w-6" src={iconGoogle} alt="" /></button>
                             <button><FaGithub className="text-2xl"></FaGithub></button>
                         </div>
                         <p className="mt-3 text-center">Have an account? <Link className="text-orange-700 font-bold" to='/register'>Register</Link></p>
