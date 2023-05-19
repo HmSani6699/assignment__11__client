@@ -7,3 +7,13 @@
 .hover02 figure:hover img {
 	width: 350px;
 }
+
+.gallerySub img {
+	width: 300px;
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.gallerySub:hover img {
+	width: 120%;
+}

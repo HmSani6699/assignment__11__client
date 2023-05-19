@@ -13,16 +13,12 @@ const Navber = () => {
     }
 
     const navLink = <>
-        <li><Link to='/'>Home</Link></li>
+        <li><Link className="mr-3" to='/'>Home</Link></li>
         <li><a>All Toy</a></li>
-        {
-            user ? <li><button onClick={handleLogOut}>Log Out</button></li> :
-                <li><Link to='/login'>Log in</Link></li>
-        }
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 border-b-2 pb-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,12 +36,15 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user && <div className="avatar online mr-4 rounded-full ring ring-[#c2410c] ring-offset-base-100 ring-offset-2 ">
-                    <div className="w-12">
+                {user && <div className="avatar online mr-4 rounded-full ring ring-[#3d4451] ring-offset-base-100 ring-offset-2 ">
+                    <div className="w-10">
                         <img title={user.displayName} className=" rounded-full" src={user.photoURL} />
                     </div>
                 </div>}
-                <input type="submit" className="btn bg-orange-700" value="Get stard" />
+                {
+                    user ? <button className="btn" onClick={handleLogOut}>Log Out</button>:
+                        <Link className="btn " to='/login'>Log in</Link>
+                }
             </div>
         </div>
     );
