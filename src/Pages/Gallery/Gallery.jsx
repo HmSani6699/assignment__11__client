@@ -10,11 +10,13 @@ import car8 from '../../assets/carImg_8.jpg'
 import './Gallery.css'
 const Gallery = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-4 mt-14 mb-14 '>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mt-14 mb-14 '>
             <div className='gallery'>
-                <img className='h-[250px] w-full' src={car8} alt="" />
+                <img className='h-[200px] w-full' src={car2} alt="" />
                 <br />
-                <img className='h-[250px] w-full' src={car2} alt="" />
+                <img className='h-[200px] w-full' src={car8} alt="" />
+                <br />
+                <img className='h-[225px] w-full' src={car1} alt="" />
             </div>
             <div>
                 <img className='h-[400px] w-full' src={car3} alt="" />
@@ -27,9 +29,11 @@ const Gallery = () => {
                 <img className='h-[400px] w-full' src={car9} alt="" />
             </div>
             <div>
-                <img className='h-[250px] w-full' src={car1} alt="" />
+                <img className='h-[200px] w-full' src={car1} alt="" />
                 <br />
-                <img className='h-[250px] w-full' src={car7} alt="" />
+                <img className='h-[200px] w-full' src={car7} alt="" />
+                <br />
+                <img className='h-[225px] w-full' src={car5} alt="" />
             </div>
         </div>
     );
