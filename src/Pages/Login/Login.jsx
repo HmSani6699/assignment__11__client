@@ -3,33 +3,49 @@ import { FaGithub } from 'react-icons/fa';
 import iconGoogle from '../../assets/download (2).png'
 
 const Login = () => {
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        const user = {
+            email, password
+        }
+        console.log(user);
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200 mt-14 mb-14">
             <div className="hero-content flex-col w-[400px] ">
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="text" placeholder="email" className="input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="text" placeholder="password" className="input input-bordered" />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
-                        </div>
+                        <h2 className="text-3xl font-bold text-center">Login</h2>
+                        <form onSubmit={handleLogin}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="text" name="password" placeholder="password" className="input input-bordered" />
+                                <label className="label">
+                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div className="form-control mt-6">
+                                <input type="submit" className="btn bg-orange-700" value="Log in" />
+                            </div>
+                        </form>
                         <p className="text-center mt-3 mb-3">Or Sign Up with</p>
                         <div className="flex items-center justify-center gap-4">
-                               <button><img className="h-6 w-6" src={iconGoogle} alt="" /></button> 
-                               <button><FaGithub className="text-2xl"></FaGithub></button>
+                            <button><img className="h-6 w-6" src={iconGoogle} alt="" /></button>
+                            <button><FaGithub className="text-2xl"></FaGithub></button>
                         </div>
                         <p className="mt-3 text-center">Have an account? <Link className="text-orange-700 font-bold" to='/register'>Register</Link></p>
                     </div>
