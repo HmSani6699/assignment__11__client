@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 
 const Navber = () => {
 
     const navLink = <>
         <li><a>Home</a></li>
         <li><a>All Toy</a></li>
+        <li><Link to='/login'>Log in</Link></li>
     </>
 
     return (
