@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navber = () => {
-    const { user ,logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
 
-    const handleLogOut= ()=>{
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=>console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
 
     const navLink = <>
@@ -17,7 +17,7 @@ const Navber = () => {
         <li><a>All Toy</a></li>
         {
             user ? <li><button onClick={handleLogOut}>Log Out</button></li> :
-             <li><Link to='/login'>Log in</Link></li>
+                <li><Link to='/login'>Log in</Link></li>
         }
     </>
 
@@ -40,6 +40,11 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {user && <div className="avatar mr-4 rounded-full ring ring-[#c2410c] ring-offset-base-100 ring-offset-2 ">
+                    <div className="w-12">
+                        <img title={user.displayName} className=" rounded-full" src={user.photoURL} />
+                    </div>
+                </div>}
                 <input type="submit" className="btn bg-orange-700" value="Get stard" />
             </div>
         </div>

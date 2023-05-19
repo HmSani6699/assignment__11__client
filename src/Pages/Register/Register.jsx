@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import  { AuthContext } from "../../Provider/AuthProvider";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
 
-    const { cretUser } = useContext(AuthContext)
+    const { cretUser,profileUpdate } = useContext(AuthContext)
 
     const handleRegister = event => {
         event.preventDefault();
@@ -19,12 +19,19 @@ const Register = () => {
         }
         console.log(user);
 
+       
+
         cretUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                profileUpdate(name,photo)
+                .then(()=>{})
+                .catch(error=>console.log(error))
             })
-            .catch(error=>console.log(error))
+            .catch(error => console.log(error))
+
+
     }
 
     return (
