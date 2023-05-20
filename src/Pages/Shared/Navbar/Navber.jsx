@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import logo from '../../../assets/logo_1.png'
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -28,11 +29,11 @@ const Navber = () => {
                         {navLink}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Toy Marketplace</a>
+                <img className="w-20 h-20" src={logo} alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    {navLink}
+                {navLink}
                 </ul>
             </div>
             <div className="navbar-end">
