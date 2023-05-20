@@ -15,10 +15,12 @@ const Navber = () => {
 
     const navLink = <>
         <li><Link className="mr-3 font-bold" to='/'>Home</Link></li>
-        <li><Link  className="mr-3 font-bold" to=''> All Toys</Link></li>
-        <li><Link  className="mr-3 font-bold" to=''>My Toys</Link></li>
-        <li><Link  className="mr-3 font-bold" to=''>Add A Toy</Link></li>
-        <li><Link  className="mr-3 font-bold" to=''>Blogs</Link></li>
+        <li><Link className="mr-3 font-bold" to=''> All Toys</Link></li>
+        {user && <>
+            <li><Link className="mr-3 font-bold" to=''>My Toys</Link></li>
+            <li><Link className="mr-3 font-bold" to=''>Add A Toy</Link></li>
+        </>}
+        <li><Link className="mr-3 font-bold" to=''>Blogs</Link></li>
     </>
 
     return (
@@ -35,11 +37,11 @@ const Navber = () => {
                 <img className="w-20 h-20" src={logo} alt="" />
             </div>
             <div className="navbar-end">
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {navLink}
-                </ul>
-            </div>
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1">
+                        {navLink}
+                    </ul>
+                </div>
 
                 {
                     user ? <button className="btn" onClick={handleLogOut}>Log Out</button> :
