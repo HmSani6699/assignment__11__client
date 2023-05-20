@@ -14,12 +14,15 @@ const Navber = () => {
     }
 
     const navLink = <>
-        <li><Link className="mr-3" to='/'>Home</Link></li>
-        <li><a>All Toy</a></li>
+        <li><Link className="mr-3 font-bold" to='/'>Home</Link></li>
+        <li><Link  className="mr-3 font-bold" to=''> All Toys</Link></li>
+        <li><Link  className="mr-3 font-bold" to=''>My Toys</Link></li>
+        <li><Link  className="mr-3 font-bold" to=''>Add A Toy</Link></li>
+        <li><Link  className="mr-3 font-bold" to=''>Blogs</Link></li>
     </>
 
     return (
-        <div className="navbar bg-base-100 border-b-2 pb-5">
+        <div className="navbar bg-base-100 border-b-2 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,21 +34,22 @@ const Navber = () => {
                 </div>
                 <img className="w-20 h-20" src={logo} alt="" />
             </div>
+            <div className="navbar-end">
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                {navLink}
+                    {navLink}
                 </ul>
             </div>
-            <div className="navbar-end">
-                {user && <div className="avatar online mr-4 rounded-full ring ring-[#3d4451] ring-offset-base-100 ring-offset-2 ">
+
+                {
+                    user ? <button className="btn" onClick={handleLogOut}>Log Out</button> :
+                        <Link className="btn " to='/login'>Log in</Link>
+                }
+                {user && <div className="avatar online ml-4 rounded-full ring ring-[#3d4451] ring-offset-base-100 ring-offset-2 ">
                     <div className="w-10">
                         <img title={user.displayName} className=" rounded-full" src={user.photoURL} />
                     </div>
                 </div>}
-                {
-                    user ? <button className="btn" onClick={handleLogOut}>Log Out</button>:
-                        <Link className="btn " to='/login'>Log in</Link>
-                }
             </div>
         </div>
     );
