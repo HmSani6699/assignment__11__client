@@ -4,7 +4,7 @@ const Footer = () => {
         <div>
             <footer className="footer p-10  text-white bg-slate-800 ">
                 <div>
-                <img className="w-20 h-20" src={logo} alt="" />
+                    <img className="w-20 h-20" src={logo} alt="" />
                     <p>Toy car</p>
                 </div>
                 <div>
@@ -35,9 +35,7 @@ const Footer = () => {
                     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
                 </div>
             </footer>
-
         </div>
-
     );
 };
 

@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Error from "../Pages/ErrorPages/Error";
+import AddedToy from "../Pages/AddedToy/AddedToy";
 
 
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/addedToy',
+        element:<AddedToy></AddedToy>
       }
     ]
   },
