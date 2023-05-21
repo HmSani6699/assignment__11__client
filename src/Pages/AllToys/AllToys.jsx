@@ -15,9 +15,9 @@ const AllToys = () => {
 
     return (
         <div>
-            <h2>All Toys {allToys.length}</h2>
+            <h2 className="text-center text-5xl font-bold mt-10">All Toys {allToys.length}</h2>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mb-20 mt-10">
                 <table className="table w-full">
                     {/* head*/}
                     <thead>
@@ -31,13 +31,10 @@ const AllToys = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-
-
                         {
                             allToys.map((toy,i) => <tr className="text-center" key={toy._id}>
                                 <th>{i+1}</th>
-                                <td>Cy Ganderton</td>
+                                <td>{toy.Seller}</td>
                                 <td>Quality Control Specialist</td>
                                 <td>Blue</td>
                                 <td>Blue</td>

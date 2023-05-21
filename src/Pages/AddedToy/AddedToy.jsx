@@ -1,10 +1,10 @@
-
+import swal from 'sweetalert';
 
 const AddedToy = () => {
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
-        const Seller = form.Seller.value;
+        const Seller = form.seller.value;
         const name = form.name.value;
         const email = form.email.value;
         const category = form.category.value;
@@ -37,6 +37,7 @@ const AddedToy = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            swal("Add Toy!", "You clicked the button!", "success");
         })
     }
 
@@ -58,7 +59,7 @@ const AddedToy = () => {
                                     <label className="label">
                                         <span className="label-text">Seller Name</span>
                                     </label>
-                                    <input type="text" name="Seller" placeholder="Seller Name" className="w-full input input-bordered" />
+                                    <input type="text" name="seller" placeholder="Seller Name" className="w-full input input-bordered" />
                                 </div>
                             </div>
 
