@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Error from "../Pages/ErrorPages/Error";
 import AddedToy from "../Pages/AddedToy/AddedToy";
 import PrivetRouts from "./PrivetRouts";
+import AllToys from "../Pages/AllToys/AllToys";
 
 
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path:'/addedToy',
         element:<PrivetRouts><AddedToy></AddedToy></PrivetRouts>
+      },
+      {
+        path:'/allToys',
+        element:<AllToys></AllToys>
       }
     ]
   },
