@@ -1,5 +1,9 @@
+// import { useContext } from "react";
+// import { AuthContext } from "../Providers/AuthPrividers";
+// import { Navigate } from "react-router-dom";
+
 import { useContext } from "react";
-import { AuthContext } from "../Providers/AuthPrividers";
+import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate } from "react-router-dom";
 
 const PrivetRouts = ({ children }) => {
