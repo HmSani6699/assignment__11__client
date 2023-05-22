@@ -46,7 +46,7 @@ const Navber = () => {
 
                 {
                     user ? <button className="btn text-white bg-[#c2410c] btn-outline" onClick={handleLogOut}>Log Out</button> :
-                        <Link className="btn btn-warning btn-outline " to='/login'>Log in</Link>
+                        <Link className="btn text-white bg-[#c2410c] btn-outline " to='/login'>Log in</Link>
                 }
                 {user && <div className="avatar online ml-4 rounded-full ring ring-[#c2410c] ring-offset-base-100 ring-offset-2 ">
                     <div className="w-10">
