@@ -35,7 +35,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 <img className="w-20 h-20" src={logo} alt="" />
-                <h2 className="text-3xl font-bold"><span className="text-[#fbbd23]">Toy</span> Car</h2>
+                <h2 className="text-3xl font-bold"><span className="text-orange-700">Toy</span> Car</h2>
             </div>
             <div className="navbar-end">
                 <div className="navbar-center hidden lg:flex">
@@ -45,10 +45,10 @@ const Navber = () => {
                 </div>
 
                 {
-                    user ? <button className="btn btn-warning btn-outline" onClick={handleLogOut}>Log Out</button> :
+                    user ? <button className="btn text-white bg-[#c2410c] btn-outline" onClick={handleLogOut}>Log Out</button> :
                         <Link className="btn btn-warning btn-outline " to='/login'>Log in</Link>
                 }
-                {user && <div className="avatar online ml-4 rounded-full ring ring-[#fbbd23] ring-offset-base-100 ring-offset-2 ">
+                {user && <div className="avatar online ml-4 rounded-full ring ring-[#c2410c] ring-offset-base-100 ring-offset-2 ">
                     <div className="w-10">
                         <img title={user.displayName} className=" rounded-full" src={user.photoURL} />
                     </div>
