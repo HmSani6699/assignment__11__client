@@ -1,3 +1,4 @@
+import CustomerRevio from "../../CustomerRevio/CustomerRevio";
 import FidBack from "../../FidBack/FidBack";
 import Gallery from "../../Gallery/Gallery";
 import ShopCategory from "../../ShopCategory/ShopCategory";
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopCategory></ShopCategory>
+            <CustomerRevio></CustomerRevio>
             <FidBack></FidBack>
         </div>
     );

@@ -1,18 +1,19 @@
 
-import banner from '../../../assets/img1.png'
+import banner from '../../../assets/bn4.avif'
 
 const Banner = () => {
     return (
-        <div className='h-[500px] mt-10 rounded-xl mb-14' >
-            <div >
-                <div>
-                    <img className='rounded-xl border h-[500px] w-full ' src={banner} alt="" /></div>
-                <div>
-
-                </div>
-            </div>
-
+        <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">Toy car</h1>
+            <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <button className="btn  btn-warning">Get Started</button>
+            
+          </div>
         </div>
+      </div>
     );
 };
 
