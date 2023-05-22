@@ -21,7 +21,7 @@ const Navber = () => {
         <li><Link className="mr-3 font-bold" to='/'>Home</Link></li>
         <li><Link className="mr-3 font-bold" to='/allToys'> All Toys</Link></li>
         {user && <>
-            <li><Link className="mr-3 font-bold" to=''>My Toys</Link></li>
+            <li><Link className="mr-3 font-bold" to='/myToys'>My Toys</Link></li>
             <li><Link className="mr-3 font-bold" to='/addedToy'>Add A Toy</Link></li>
         </>}
         <li><Link className="mr-3 font-bold" to='./blog'>Blogs</Link></li>

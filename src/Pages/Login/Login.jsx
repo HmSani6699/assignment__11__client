@@ -3,6 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import iconGoogle from '../../assets/download (2).png'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import swal from 'sweetalert';
 
 const Login = () => {
 
@@ -18,8 +19,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                swal("Add Toy!", "You clicked the button!", "success");
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error);
+                swal("Error!", `${error.message}`, "error");
+            })
     }
 
 
