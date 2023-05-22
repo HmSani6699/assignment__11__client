@@ -35,6 +35,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 <img className="w-20 h-20" src={logo} alt="" />
+                <h2 className="text-3xl font-bold">Toy Car</h2>
             </div>
             <div className="navbar-end">
                 <div className="navbar-center hidden lg:flex">

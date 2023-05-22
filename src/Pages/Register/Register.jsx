@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import swal from 'sweetalert';
+
 
 const Register = () => {
 
@@ -25,6 +27,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                swal("Add Toy!", "You clicked the button!", "success");
                 profileUpdate(name,photo)
                 .then(()=>{})
                 .catch(error=>console.log(error))

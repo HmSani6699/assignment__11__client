@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import swal from 'sweetalert';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AddedToy = () => {
+
+    const {user} = useContext(AuthContext)
+
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -68,7 +73,7 @@ const AddedToy = () => {
                                     <label className="label">
                                         <span className="label-text">Seller Email</span>
                                     </label>
-                                    <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                                    <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
