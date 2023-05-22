@@ -20,7 +20,7 @@ const Navber = () => {
             <li><Link className="mr-3 font-bold" to=''>My Toys</Link></li>
             <li><Link className="mr-3 font-bold" to='/addedToy'>Add A Toy</Link></li>
         </>}
-        <li><Link className="mr-3 font-bold" to=''>Blogs</Link></li>
+        <li><Link className="mr-3 font-bold" to='./blog'>Blogs</Link></li>
     </>
 
     return (

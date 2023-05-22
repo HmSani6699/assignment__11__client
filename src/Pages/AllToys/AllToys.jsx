@@ -38,7 +38,7 @@ const AllToys = () => {
                                 <td>Quality Control Specialist</td>
                                 <td>Blue</td>
                                 <td>Blue</td>
-                                <td> <button className="btn">View Details</button> </td>
+                                <td><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button> </td>
                             </tr>)
                         }
 
