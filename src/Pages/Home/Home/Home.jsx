@@ -1,3 +1,4 @@
+import FidBack from "../../FidBack/FidBack";
 import Gallery from "../../Gallery/Gallery";
 import ShopCategory from "../../ShopCategory/ShopCategory";
 import Banner from "../Banner/Banner";
@@ -8,6 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopCategory></ShopCategory>
+            <FidBack></FidBack>
         </div>
     );
 };
