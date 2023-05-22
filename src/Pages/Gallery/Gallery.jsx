@@ -10,8 +10,8 @@ import car8 from '../../assets/carImg_8.jpg'
 import './Gallery.css'
 const Gallery = () => {
     return (
-        <div className='mt-14'>
-            <h2 className='text-5xl font-bold text-center mb-12'>Toy car gallery</h2>
+        <div className='mt-20'>
+            <h2 className='text-5xl font-bold text-center mb-12'>Toy car <span className="text-orange-700">Gallery</span></h2>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-6  mb-14 '>
                 <div className='gallery'>
                     <img className='h-[200px] w-full' src={car2} alt="" />

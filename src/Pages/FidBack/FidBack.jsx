@@ -26,7 +26,7 @@ const FidBack = () => {
                             <textarea placeholder="Detail description" name="details" className="  textarea textarea-bordered textarea-lg w-full " ></textarea>
                         </div>
                         <div className="form-control mt-6">
-                            <input onClick={handleSend} type="submit" className="btn" value="Send" />
+                            <input onClick={handleSend} type="submit" className="btn  text-white bg-[#c2410c]" value="Send" />
                         </div>
                     </div>
                 </div>
