@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 const Register = () => {
 
-    const { cretUser,profileUpdate } = useContext(AuthContext)
+    const { cretUser, profileUpdate } = useContext(AuthContext)
 
     const handleRegister = event => {
         event.preventDefault();
@@ -21,18 +21,21 @@ const Register = () => {
         }
         console.log(user);
 
-       
+
 
         cretUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                swal("Add Toy!", "You clicked the button!", "success");
-                profileUpdate(name,photo)
-                .then(()=>{})
-                .catch(error=>console.log(error))
+                swal("Registasion Success full!", "You clicked the button!", "success");
+                profileUpdate(name, photo)
+                    .then(() => { })
+                    .catch(error => console.log(error))
             })
-            .catch(error => console.log(error))
+            .catch(error => { 
+                console.log(error);
+                swal("Error!", `${error.message}`, "error");
+             })
 
 
     }
@@ -42,7 +45,7 @@ const Register = () => {
             <div className="hero-content flex-col w-[400px] ">
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h2 className="text-3xl font-bold text-center">Sign up</h2>
+                        <h2 className="text-3xl font-bold text-center text-orange-700">Sign up</h2>
                         <form onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">

@@ -19,7 +19,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                swal("Add Toy!", "You clicked the button!", "success");
+                swal("Log in Success full!", "You clicked the button!", "success");
             })
             .catch(error => {
                 console.log(error);
@@ -43,7 +43,7 @@ const Login = () => {
             <div className="hero-content flex-col w-[400px] ">
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h2 className="text-3xl font-bold text-center">Login</h2>
+                        <h2 className="text-3xl font-bold text-center text-orange-700">Login</h2>
                         <form onSubmit={handleLogin}>
                             <div className="form-control">
                                 <label className="label">

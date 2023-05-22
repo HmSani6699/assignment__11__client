@@ -24,7 +24,7 @@ const AllToys = () => {
             })
     }
 
-    console.log(toyDeails);
+    // console.log(allToys);
 
     return (
         <div>
@@ -47,7 +47,7 @@ const AllToys = () => {
                         {
                             allToys.map((toy, i) => <tr className="text-center" key={toy._id}>
                                 <th>{i + 1}</th>
-                                <td>{toy.seller}</td>
+                                <td>{toy.Seller}</td>
                                 <td>Quality Control Specialist</td>
                                 <td>{toy.category}</td>
                                 <td>{toy.price}</td>
