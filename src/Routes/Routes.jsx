@@ -8,43 +8,48 @@ import AddedToy from "../Pages/AddedToy/AddedToy";
 import PrivetRouts from "./PrivetRouts";
 import AllToys from "../Pages/AllToys/AllToys";
 import Blog from "../Pages/Blog/Blog";
+import ToyDertails from "../Pages/ToyDetails/ToyDertails";
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Main></Main> ,
-    children:[
+    element: <Main></Main>,
+    children: [
       {
-        path:'/',
-        element:<Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/register',
-        element:<Register></Register>
+        path: '/register',
+        element: <Register></Register>
       },
       {
-        path:'/addedToy',
-        element:<PrivetRouts><AddedToy></AddedToy></PrivetRouts>
+        path: '/addedToy',
+        element: <PrivetRouts><AddedToy></AddedToy></PrivetRouts>
       },
       {
-        path:'/allToys',
-        element:<AllToys></AllToys>
+        path: '/allToys',
+        element: <AllToys></AllToys>
       },
       {
-        path:'/blog',
-        element:<Blog></Blog>
+        path: '/addToy/:id',
+        element:<PrivetRouts><ToyDertails></ToyDertails></PrivetRouts>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
       }
     ]
   },
   {
-    path:'*',
-    element:<Error></Error>
+    path: '*',
+    element: <Error></Error>
   }
 ]);
 

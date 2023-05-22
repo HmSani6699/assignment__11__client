@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
 
@@ -36,9 +37,9 @@ const AllToys = () => {
                                 <th>{i+1}</th>
                                 <td>{toy.Seller}</td>
                                 <td>Quality Control Specialist</td>
-                                <td>Blue</td>
-                                <td>Blue</td>
-                                <td><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button> </td>
+                                <td>{toy.category}</td>
+                                <td>{toy.price}</td>
+                                <td><Link to={`/addToy/${toy._id}`}><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button> </Link></td>
                             </tr>)
                         }
 
