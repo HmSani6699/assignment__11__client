@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import logo from '../../../assets/logo_1.png'
+import logo from '../../../assets/logo_1.png';
+import swal from 'sweetalert';
+
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -9,7 +11,9 @@ const Navber = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => { 
+                swal("Sign Out", "Success full!", "success");
+            })
             .catch(error => console.log(error))
     }
 

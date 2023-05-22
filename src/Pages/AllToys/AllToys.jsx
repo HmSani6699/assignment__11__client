@@ -8,7 +8,7 @@ const AllToys = () => {
         fetch('http://localhost:5000/addToy')
             .then(res => res.json())
             .then(data => {
-                setAlltoys(data);
+                setAlltoys(data.slice(0,20));
             })
     }, [])
 
