@@ -1,13 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaPenNib, FaTrashAlt } from 'react-icons/fa';
+import swal from 'sweetalert'
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     const [allToys, setAllToys] = useState([])
-
-    const [id, setId] = useState('')
 
     useEffect(() => {
         fetch(`http://localhost:5000/toy?email=${user?.email}`)
@@ -42,11 +41,27 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.deletedCount) {
-                    alert('Delete Success !!')
-                    const newfood = allToys.filter(food => food._id !== id);
-                    setAllToys(newfood)
-                }
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this Toy car!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Poof! Your imaginary file has been deleted!", {
+                                icon: "success",
+
+                            });
+                            if (data.deletedCount) {
+                                const newfood = allToys.filter(food => food._id !== id);
+                                setAllToys(newfood)
+                            }
+                        } else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
             })
     }
 
@@ -70,7 +85,6 @@ const MyToys = () => {
                     <tbody>
                         {
                             allToys.map((toy, i) => <tr className="text-center" key={toy._id}>
-                                {/* {setId(toy._id)} */}
                                 <th>{i + 1}</th>
                                 <td>{toy.Seller}</td>
                                 <td>Quality Control Specialist</td>
@@ -111,7 +125,7 @@ const MyToys = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <button onClick={()=>handleDelete(toy._id)} className="btn btn-outline  border-red-700 border-2 text-red-600 "><FaTrashAlt></FaTrashAlt> </button>
+                                    <button onClick={() => handleDelete(toy._id)} className="btn btn-outline  border-red-700 border-2 text-red-600 "><FaTrashAlt></FaTrashAlt> </button>
                                 </td>
                             </tr>)
                         }
