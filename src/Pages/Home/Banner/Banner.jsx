@@ -3,7 +3,7 @@ import banner from '../../../assets/bn4.avif'
 
 const Banner = () => {
     return (
-        <div className='rounded-xl'>
+        <div className='rounded-xl mt-20'>
             <div className="hero min-h-screen rounded-xl" style={{ backgroundImage: `url(${banner})` }}>
                 <div className="hero-overlay bg-opacity-60 rounded-xl"></div>
                 <div className="hero-content text-center text-neutral-content">
