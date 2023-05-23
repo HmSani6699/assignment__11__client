@@ -6,6 +6,9 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     const [allToys, setAllToys] = useState([])
+
+    const [id, setId] = useState('')
+
     useEffect(() => {
         fetch(`http://localhost:5000/toy?email=${user?.email}`)
             .then(res => res.json())
@@ -14,21 +17,40 @@ const MyToys = () => {
             })
     }, [])
 
-    console.log(allToys);
-
     const handleUpdate = (event) => {
         event.preventDefault();
         const form = event.target;
         const price = form.price.value;
-        const quantity = form.quantity.value;
-        const password = form.password.value;
+        const quantity = form.price.value;
+        const details = form.details.value;
 
-        console.log(price,quantity,password);
+        console.log(price, quantity, details);
+
+
+        // fetch(`http://localhost:5000/addToy/${id}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
     }
 
-    const handleDelete = () => {
 
+    const handleDelete = id => {
+        fetch(`http://localhost:5000/addToy/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    alert('Delete Success !!')
+                    const newfood = allToys.filter(food => food._id !== id);
+                    setAllToys(newfood)
+                }
+            })
     }
+
+
     return (
         <div>
             <h2 className="text-center text-5xl font-bold mt-10">My Toys {allToys.length}</h2>
@@ -48,6 +70,7 @@ const MyToys = () => {
                     <tbody>
                         {
                             allToys.map((toy, i) => <tr className="text-center" key={toy._id}>
+                                {/* {setId(toy._id)} */}
                                 <th>{i + 1}</th>
                                 <td>{toy.Seller}</td>
                                 <td>Quality Control Specialist</td>
@@ -64,15 +87,15 @@ const MyToys = () => {
                                                     <div className="grid lg:grid-cols-2 gap-4">
                                                         <div className="form-control mb-4">
                                                             <label className="label">
-                                                                <span className="label-text">Email</span>
+                                                                <span className="label-text">Price</span>
                                                             </label>
-                                                            <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                                                            <input type="text" name="price" placeholder="email" className="input input-bordered" />
                                                         </div>
                                                         <div className="form-control">
                                                             <label className="label">
-                                                                <span className="label-text">Password</span>
+                                                                <span className="label-text">Quantity</span>
                                                             </label>
-                                                            <input type="text" name="password" placeholder="password" className="input input-bordered" />
+                                                            <input type="text" name="quantity" placeholder="password" className="input input-bordered" />
                                                         </div>
                                                     </div>
                                                     <div className="form-control ">
@@ -88,7 +111,7 @@ const MyToys = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <button onClick={handleDelete} className="btn btn-outline  border-red-700 border-2 text-red-600 "><FaTrashAlt></FaTrashAlt> </button>
+                                    <button onClick={()=>handleDelete(toy._id)} className="btn btn-outline  border-red-700 border-2 text-red-600 "><FaTrashAlt></FaTrashAlt> </button>
                                 </td>
                             </tr>)
                         }
