@@ -17,14 +17,16 @@ const MyToys = () => {
             })
     }, [])
 
-    const handleUpdate = (event) => {
+    const handleUpdate = (event,id) => {
+
         event.preventDefault();
+        event.stopPropagation()
         const form = event.target;
         const price = form.price.value;
         const quantity = form.price.value;
         const details = form.details.value;
 
-        console.log(price, quantity, details);
+        console.log(price, quantity, details,id);
 
 
         // fetch(`http://localhost:5000/addToy/${id}`)
@@ -108,7 +110,7 @@ const MyToys = () => {
                                         <div className="modal">
                                             <div className="modal-box relative h-[500px] w-[600px] ">
                                                 <label htmlFor="my-modal-3" className="btn bg-red-700 btn-sm btn-circle absolute right-2 top-2">✕</label>
-                                                <form onSubmit={handleUpdate} className="pt-12">
+                                                <form onSubmit={()=>handleUpdate(event,toy._id)} className="pt-12">
                                                     <div className="grid lg:grid-cols-2 gap-4">
                                                         <div className="form-control mb-4">
                                                             <label className="label">

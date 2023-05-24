@@ -24,17 +24,20 @@ const AuthPrividers = ({ children }) => {
     // Googel log in user
     const googleProvider = new GoogleAuthProvider()
     const googleLogin = () => {
+        setLoding(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     // Github login
     const  githubProvider= new GithubAuthProvider()
     const githubLogin = ()=>{
+        setLoding(true)
         return signInWithPopup(auth,githubProvider)
     }
 
     // Update useer Profile
     const profileUpdate = (name, photo) => {
+        setLoding(true)
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         })
@@ -42,6 +45,7 @@ const AuthPrividers = ({ children }) => {
 
 
     const logOut = () => {
+        setLoding(true)
         return signOut(auth)
     }
 
