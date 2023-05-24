@@ -1,9 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 
 const UpdateToy = () => {
 
+    const toy = useLoaderData()
+    console.log(toy);
 
-    const handleUpdate = (event,id) => {
-
+    const handleUpdate = (event, id) => {
         event.preventDefault();
         event.stopPropagation()
         const form = event.target;
@@ -11,18 +13,11 @@ const UpdateToy = () => {
         const quantity = form.price.value;
         const details = form.details.value;
 
-        console.log(price, quantity, details,id);
-
-
-        // fetch(`http://localhost:5000/addToy/${id}`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
+        console.log(price, quantity, details, id);
     }
     return (
         <div>
-            <form onSubmit={ handleUpdate} className="pt-12">
+            <form onSubmit={handleUpdate} className="pt-12">
                 <div className="grid lg:grid-cols-2 gap-4">
                     <div className="form-control mb-4">
                         <label className="label">
