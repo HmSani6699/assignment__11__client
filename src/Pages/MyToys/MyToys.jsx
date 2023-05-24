@@ -6,7 +6,8 @@ import swal from 'sweetalert'
 const MyToys = () => {
     const { user } = useContext(AuthContext);
 
-    const [allToys, setAllToys] = useState([])
+    const [allToys, setAllToys] = useState([]);
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/toy?email=${user?.email}`)
@@ -65,7 +66,7 @@ const MyToys = () => {
             })
     }
 
-
+    console.log(allToys);
     return (
         <div>
             <h2 className="text-center text-5xl font-bold mt-10">My Toys {allToys.length}</h2>
@@ -74,22 +75,32 @@ const MyToys = () => {
                 <table className="table w-full">
                     <thead>
                         <tr className="text-center">
-                            <th>No</th>
-                            <th>Seller</th>
-                            <th>Toy Name</th>
-                            <th>Sub-category</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             allToys.map((toy, i) => <tr className="text-center" key={toy._id}>
                                 <th>{i + 1}</th>
-                                <td>{toy.Seller}</td>
-                                <td>Quality Control Specialist</td>
+                                <th><div className="avatar">
+                                    <div className="w-24 rounded-xl">
+                                        <img src={toy.photo} />
+                                    </div>
+                                </div></th>
+                                <td className="text-left">
+                                    <p className="text-2xl font-semibold">{toy.Seller}</p>
+                                    <p><span className="font-bold">Email</span> : {toy.email}</p>
+                                    <p><span className="font-bold">Rating</span> : {toy.rating}</p>
+                                </td>
                                 <td>{toy.category}</td>
-                                <td>{toy.price}</td>
+                                <td>{toy.quantity}</td>
+                                <td>${toy.price}</td>
                                 <td>
                                     <div>
                                         <label htmlFor="my-modal-3" className="btn mb-2 border-red-700 border-2 btn-outline"><FaPenNib></FaPenNib></label>

@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
-
+    const { user } = useContext(AuthContext)
     const [allToys, setAlltoys] = useState([]);
     const [toyDeails, setToyDeails] = useState({})
 
@@ -53,7 +55,9 @@ const AllToys = () => {
                                 <td>{toy.price}</td>
                                 {/* <td><Link to={`/addToy/${toy._id}`}><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button> </Link></td> */}
                                 <td>
-                                    <label htmlFor="my-modal-3" onClick={() => handleModal(toy._id)} className="btn text-white bg-[#c2410c] btn-outline">View Details</label>
+                                    {user ?
+                                        <label htmlFor="my-modal-3" onClick={() => handleModal(toy._id)} className="btn text-white bg-[#c2410c] btn-outline">View Details</label>:<Link to='/login'><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button></Link>
+                                    }
                                     <input type="checkbox" id="my-modal-3" className="modal-toggle" />
                                     <div className="modal">
                                         <div className="modal-box relative h-[500px] w-[600px] ">
