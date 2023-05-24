@@ -16,7 +16,7 @@ const UpdateToy = () => {
         console.log(price, quantity, details, id);
     }
     return (
-        <div>
+        <div className="w-1/2 mx-auto border mb-20 mt-20 p-10 rounded-xl">
             <form onSubmit={handleUpdate} className="pt-12">
                 <div className="grid lg:grid-cols-2 gap-4">
                     <div className="form-control mb-4">
