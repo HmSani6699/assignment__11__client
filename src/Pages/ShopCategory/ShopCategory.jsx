@@ -23,13 +23,13 @@ const ShopCategory = () => {
     }
 
     return (
-        <div className='mb-14'>
+        <div className='mt-20 mb-20'>
             <Tabs>
                 <div className='text-center mx-auto'>
                     <TabList>
                         {
                             categoris && categoris.map((categori, index) => (
-                                <Tab key={index}>{categori.CategoryName}</Tab>
+                                <Tab  key={index}>{categori.CategoryName}</Tab>
                             ))
                         }
                     </TabList>
@@ -41,7 +41,7 @@ const ShopCategory = () => {
                             <TabPanel key={i}>
                                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                                     {categori.toys.map((toy, i) => (
-                                        <div key={i} className='flex gap-5 items-center border rounded-xl p-4 '>
+                                        <div key={i} className='flex gap-5 items-center border shadow-lg rounded-xl p-4 '>
                                             <img className='h-[200px]' src={toy.picture} alt="" />
                                             <div>
                                                 <h2 className='text-3xl font-bold'>{toy.name}</h2>
