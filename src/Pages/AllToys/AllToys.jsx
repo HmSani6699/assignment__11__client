@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const AllToys = () => {
     const { user } = useContext(AuthContext)
     const [allToys, setAlltoys] = useState([]);
-    const [toyDeails, setToyDeails] = useState({})
+    const [toyDeails, setToyDeails] = useState({});
+    const [searchText, setSearchText] = useState("");
+
 
     useEffect(() => {
         fetch('http://localhost:5000/addToy')
@@ -26,11 +28,32 @@ const AllToys = () => {
             })
     }
 
-    // console.log(allToys);
+    
+    
+    const handleSearch = () => {
+        console.log(searchText);
+
+        fetch(`http://localhost:5000/getToyText/${searchText}`)
+            .then(res => res.json())
+            .then(data => {
+                setAlltoys(data);
+            })
+    }
 
     return (
         <div>
             <h2 className="text-center text-5xl font-bold mt-10">All Toys {allToys.length}</h2>
+
+            <div className="flex justify-center mt-10 mb-16">
+                <div className="form-control">
+                    <div className="input-group">
+                        <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search…" className="input input-bordered" />
+                        <button onClick={handleSearch} className="btn text-white bg-[#c2410c]  btn-square">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <div className="overflow-x-auto mb-20 mt-10">
                 <table className="table w-full">
@@ -50,13 +73,13 @@ const AllToys = () => {
                             allToys.map((toy, i) => <tr className="text-center" key={toy._id}>
                                 <th>{i + 1}</th>
                                 <td>{toy.Seller}</td>
-                                <td>Quality Control Specialist</td>
+                                <td>{toy.name}</td>
                                 <td>{toy.category}</td>
                                 <td>{toy.price}</td>
                                 {/* <td><Link to={`/addToy/${toy._id}`}><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button> </Link></td> */}
                                 <td>
                                     {user ?
-                                        <label htmlFor="my-modal-3" onClick={() => handleModal(toy._id)} className="btn text-white bg-[#c2410c] btn-outline">View Details</label>:<Link to='/login'><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button></Link>
+                                        <label htmlFor="my-modal-3" onClick={() => handleModal(toy._id)} className="btn text-white bg-[#c2410c] btn-outline">View Details</label> : <Link to='/login'><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button></Link>
                                     }
                                     <input type="checkbox" id="my-modal-3" className="modal-toggle" />
                                     <div className="modal">

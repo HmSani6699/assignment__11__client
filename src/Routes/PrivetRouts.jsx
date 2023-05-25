@@ -1,17 +1,15 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../Providers/AuthPrividers";
-// import { Navigate } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate } from "react-router-dom";
+import Spiner from "../Pages/Spiner/Spiner";
 
 const PrivetRouts = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);
 
     if (loading) {
-        return <progress className="progress w-56"></progress>
+        return <Spiner></Spiner>
     }
 
     if (user) {
