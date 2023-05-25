@@ -1,33 +1,113 @@
+import img1 from '../../assets/img1.png';
+import img2 from '../../assets/img2.jpg';
+import img3 from '../../assets/img3.jpg';
+import img4 from '../../assets/img4.jpg';
+import img5 from '../../assets/img5.jpg';
+import img6 from '../../assets/img6.jpg';
 
+import man1 from '../../assets/man.jpg';
+import man2 from '../../assets/man1.jpg';
+import man3 from '../../assets/man3.jpg';
+import man4 from '../../assets/man4.jpg';
+import man5 from '../../assets/man5.jpg';
+import man6 from '../../assets/man6.jpg';
 const CustomerRevio = () => {
     return (
-        <div className="carousel w-full">
-            <div id="slide1" className="carousel-item relative w-full">
-                <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide4" className="btn btn-circle">❮</a>
-                    <a href="#slide2" className="btn btn-circle">❯</a>
+        <div className="carousel carousel-center w-3/4 mx-auto p-4 space-x-4 bg-neutral rounded-box">
+            <div className="carousel-item">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img6} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <div className='flex gap-3 items-center'>
+                            <div className="avatar">
+                                <div className="w-24 mask mask-hexagon">
+                                    <img src={man1} />
+                                </div>
+                            </div>
+                            <h2 className='text-3xl font-bold '>Noman Howladar</h2>
+                        </div>
+                        <p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
             </div>
-            <div id="slide2" className="carousel-item relative w-full">
-                <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide1" className="btn btn-circle">❮</a>
-                    <a href="#slide3" className="btn btn-circle">❯</a>
+            <div className="carousel-item">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img2} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <div className='flex gap-3 items-center'>
+                            <div className="avatar">
+                                <div className="w-24 mask mask-hexagon">
+                                    <img src={man2} />
+                                </div>
+                            </div>
+                            <h2 className='text-3xl font-bold '>Noman Howladar</h2>
+                        </div>
+                        <p className='text-justify'>Sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
             </div>
-            <div id="slide3" className="carousel-item relative w-full">
-                <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide2" className="btn btn-circle">❮</a>
-                    <a href="#slide4" className="btn btn-circle">❯</a>
+            <div className="carousel-item">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img3} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <div className='flex gap-3 items-center'>
+                            <div className="avatar">
+                                <div className="w-24 mask mask-hexagon">
+                                    <img src={man3} />
+                                </div>
+                            </div>
+                            <h2 className='text-3xl font-bold '>Noman Howladar</h2>
+                        </div>
+                        <p className='text-justify'>Sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
             </div>
-            <div id="slide4" className="carousel-item relative w-full">
-                <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a>
-                    <a href="#slide1" className="btn btn-circle">❯</a>
+            <div className="carousel-item">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img4} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <div className='flex gap-3 items-center'>
+                            <div className="avatar">
+                                <div className="w-24 mask mask-hexagon">
+                                    <img src={man4} />
+                                </div>
+                            </div>
+                            <h2 className='text-3xl font-bold '>Noman Howladar</h2>
+                        </div>
+                        <p className='text-justify'>Sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="carousel-item">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img5} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <div className='flex gap-3 items-center'>
+                            <div className="avatar">
+                                <div className="w-24 mask mask-hexagon">
+                                    <img src={man5} />
+                                </div>
+                            </div>
+                            <h2 className='text-3xl font-bold '>Noman Howladar</h2>
+                        </div>
+                        <p className='text-justify'>Sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="carousel-item">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img1} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <div className='flex gap-3 items-center'>
+                            <div className="avatar">
+                                <div className="w-24 mask mask-hexagon">
+                                    <img src={man6} />
+                                </div>
+                            </div>
+                            <h2 className='text-3xl font-bold '>Noman Howladar</h2>
+                        </div>
+                        <p className='text-justify'>Sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
             </div>
         </div>
