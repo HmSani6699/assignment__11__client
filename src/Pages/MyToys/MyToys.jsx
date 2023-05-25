@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
-
     const [allToys, setAllToys] = useState([]);
+    const [activeTab, setActiveTab] = useState("remote");
+
 
 
     useEffect(() => {
@@ -51,9 +52,32 @@ const MyToys = () => {
     }
 
     console.log(allToys);
+
+
+    const handleTabClick = (tabName) => {
+        setActiveTab(tabName);
+      };
+
     return (
         <div>
             <h2 className="text-center text-5xl font-bold mt-10">My Toys {allToys.length}</h2>
+
+            <div className="flex">
+                <div
+                    onClick={() => handleTabClick("remote")}
+                    className={`tab  tab2 remote ${activeTab == "remote" ? " bg-red-700 text-white" : ""
+                        }`}
+                >
+                    Descending 
+                </div>
+                <div
+                    onClick={() => handleTabClick("offline")}
+                    className={`tab  tab2 Offline${activeTab == "offline" ? "  bg-red-700 text-white" : ""
+                        }`}
+                >
+                  Ascending 
+                </div>
+            </div>
 
             <div className="overflow-x-auto mb-20 mt-10">
                 <table className="table w-full">
