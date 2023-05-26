@@ -1,5 +1,7 @@
+import UseTitle from '../../../Hoks/useTitle';
 import logo from '../../../assets/logo_1.png'
 const Footer = () => {
+    UseTitle('Footer')
     return (
         <div>
             <footer className="footer p-10  text-white bg-slate-800 ">

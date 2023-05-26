@@ -4,8 +4,10 @@ import iconGoogle from '../../assets/download (2).png'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import swal from 'sweetalert';
+import UseTitle from "../../Hoks/useTitle";
 
 const Login = () => {
+    UseTitle('Login')
 
     const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
 

@@ -1,6 +1,8 @@
 import swal from 'sweetalert';
+import UseTitle from '../../Hoks/useTitle';
 
 const FidBack = () => {
+    UseTitle('FeedBack')
 
     const handleSend=()=>{
         swal("Feedback send!", "Success full!", "success");

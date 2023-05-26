@@ -3,8 +3,12 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { FaPenNib, FaTrashAlt } from 'react-icons/fa';
 import swal from 'sweetalert'
 import { Link } from "react-router-dom";
+import UseTitle from "../../Hoks/useTitle";
 
 const MyToys = () => {
+
+    UseTitle('MyToys')
+    
     const { user } = useContext(AuthContext);
     const [allToys, setAllToys] = useState([]);
     const [activeTab, setActiveTab] = useState(1);

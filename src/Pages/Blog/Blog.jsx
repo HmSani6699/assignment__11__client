@@ -1,5 +1,8 @@
+import UseTitle from "../../Hoks/useTitle";
 
 const Blog = () => {
+
+    UseTitle('Blog')
     return (
         <div className='w-2/4 mx-auto mt-10 mb-14'>
             <div >

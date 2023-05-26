@@ -1,8 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import UseTitle from "../../Hoks/useTitle";
 
 const AllToys = () => {
+
+    UseTitle('AllToys')
     const { user } = useContext(AuthContext)
     const [allToys, setAlltoys] = useState([]);
     const [toyDeails, setToyDeails] = useState({});

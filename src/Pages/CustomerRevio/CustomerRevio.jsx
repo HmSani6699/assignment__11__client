@@ -1,5 +1,6 @@
 
 
+import UseTitle from '../../Hoks/useTitle';
 import man1 from '../../assets/man.jpg';
 import man2 from '../../assets/man1.jpg';
 import man3 from '../../assets/man3.jpg';
@@ -7,6 +8,7 @@ import man4 from '../../assets/man4.jpg';
 import man5 from '../../assets/man5.jpg';
 import man6 from '../../assets/man6.jpg';
 const CustomerRevio = () => {
+    UseTitle('CustomerRevio')
     return (
         <div className="carousel carousel-center w-3/4 mx-auto p-4 space-x-4 bg-neutral rounded-box">
             <div className="carousel-item">

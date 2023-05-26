@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import error from '../../assets/download (1).png'
+import UseTitle from '../../Hoks/useTitle';
 const Error = () => {
+    UseTitle('Error')
     return (
         <div className='mt-16 flex items-center justify-center '>
             <div className='w-[400px]'>

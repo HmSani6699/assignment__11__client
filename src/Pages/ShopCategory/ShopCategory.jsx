@@ -3,8 +3,11 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../Hoks/useTitle';
 
 const ShopCategory = () => {
+UseTitle('ShopCategory')
+
     const { user } = useContext(AuthContext)
     const [categoris, setCategoris] = useState();
 

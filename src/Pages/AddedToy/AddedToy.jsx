@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import swal from 'sweetalert';
 import { AuthContext } from '../../Provider/AuthProvider';
+import UseTitle from '../../Hoks/useTitle';
 
 const AddedToy = () => {
+    UseTitle('AddedToy')
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const handleRegister = event => {
         event.preventDefault();
@@ -32,18 +34,18 @@ const AddedToy = () => {
         }
         console.log(user);
 
-        fetch('https://assignment11-servir.vercel.app/addToys',{
-            method:'POST',
-            headers:{
+        fetch('https://assignment11-servir.vercel.app/addToys', {
+            method: 'POST',
+            headers: {
                 'content-type': 'application/json'
             },
-            body:JSON.stringify(user)
+            body: JSON.stringify(user)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            swal("Add Toy!", "You clicked the button!", "success");
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                swal("Add Toy!", "You clicked the button!", "success");
+            })
     }
 
     return (
