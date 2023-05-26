@@ -6,4 +6,4 @@
 #### - Awesome slider section the toy car
 #### - Responsive Footer part
 
-### Private Repo Link: [https://assignment10clientsite.web.app/](https://assignment10clientsite.web.app/)
+### Private Repo Link: [https://assignment11-67a05.web.app/](https://assignment11-67a05.web.app)
