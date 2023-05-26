@@ -75,7 +75,7 @@ const AllToys = () => {
                                 <td>{toy.Seller}</td>
                                 <td>{toy.name}</td>
                                 <td>{toy.category}</td>
-                                <td>{toy.price}</td>
+                                <td>${toy.price}</td>
                                 {/* <td><Link to={`/addToy/${toy._id}`}><button className="btn text-white bg-[#c2410c] btn-outline">View Details</button> </Link></td> */}
                                 <td>
                                     {user ?
