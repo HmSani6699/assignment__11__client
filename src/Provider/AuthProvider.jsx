@@ -15,6 +15,7 @@ const AuthPrividers = ({ children }) => {
     const cretUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
+    
     // Sign in user
     const signIn = (email, password) => {
         setLoding(true)
