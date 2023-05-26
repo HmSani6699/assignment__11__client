@@ -12,7 +12,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toy?email=${user?.email}&price=${activeTab}`)
+        fetch(`https://assignment11-servir.vercel.app/toy?email=${user?.email}&price=${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 setAllToys(data);
@@ -22,7 +22,7 @@ const MyToys = () => {
 
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/addToy/${id}`, {
+        fetch(`https://assignment11-servir.vercel.app/addToy/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

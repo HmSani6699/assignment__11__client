@@ -21,7 +21,7 @@ const CustomerRevio = () => {
                             </div>
                             <h2 className='text-3xl font-bold '>Noman Howladar</h2>
                         </div>
-                        <p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p className='text-justify'>Adipisicing elit. Eum distinctio obcaecati assumenda earum veniam porro, consequatur ad quaerat ducimus facilis laborum quas libero magni. Minus est accusamus excepturi at. Beatae impedit dolores dolorem,Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const UpdateToy = () => {
 
 
 
-        fetch(`http://localhost:5000/addToy/${toy._id}`,{
+        fetch(`https://assignment11-servir.vercel.app/addToy/${toy._id}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'

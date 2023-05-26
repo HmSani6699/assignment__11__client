@@ -10,7 +10,7 @@ const AllToys = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/addToy')
+        fetch('https://assignment11-servir.vercel.app/addToy')
             .then(res => res.json())
             .then(data => {
                 setAlltoys(data.slice(0, 20));
@@ -21,7 +21,7 @@ const AllToys = () => {
     const handleModal = (id) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/addToy/${id}`)
+        fetch(`https://assignment11-servir.vercel.app/addToy/${id}`)
             .then(res => res.json())
             .then(data => {
                 setToyDeails(data);
@@ -33,7 +33,7 @@ const AllToys = () => {
     const handleSearch = () => {
         console.log(searchText);
 
-        fetch(`http://localhost:5000/getToyText/${searchText}`)
+        fetch(`https://assignment11-servir.vercel.app/getToyText/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setAlltoys(data);

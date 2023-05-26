@@ -9,7 +9,7 @@ const ShopCategory = () => {
     const [categoris, setCategoris] = useState();
 
     useEffect(() => {
-        fetch('http://localhost:5000/tabToy')
+        fetch('https://assignment11-servir.vercel.app/tabToy')
             .then(res => res.json())
             .then(data => {
                 setCategoris(data);
