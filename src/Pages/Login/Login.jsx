@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from 'react-icons/fa';
 import iconGoogle from '../../assets/download (2).png'
 import { useContext } from "react";
@@ -10,6 +10,9 @@ const Login = () => {
     UseTitle('Login')
 
     const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
+    const location=useLocation();
+    const navigate =useNavigate()
+    const from =location.state?.from?.pathname || "/";
 
     const handleLogin = event => {
         event.preventDefault();
@@ -22,6 +25,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 swal("Log in Success full!", "You clicked the button!", "success");
+                navigate(from,{ replace: true })
             })
             .catch(error => {
                 console.log(error);
