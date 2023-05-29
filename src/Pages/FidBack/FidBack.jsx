@@ -12,7 +12,7 @@ const FidBack = () => {
         <div className="hero min-h-screen bg-base-200 mt-14 mb-14">
             <div className="hero-content flex-col  ">
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-                    <div className="card-body w-[700px]">
+                    <div className="card-body w-full lg:w-[700px]">
                         <h2 className="text-3xl font-bold text-center text-orange-700">Feedback please</h2>
                         <div className="form-control">
                             <label className="label">
